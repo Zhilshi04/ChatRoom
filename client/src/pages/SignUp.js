@@ -34,7 +34,7 @@ function LoginPage() {
   const handleSignUp = async () => {
     console.log('register in with:', { username, email, password, conPassword});
     try {
-          const response = await axios.post('http://127.0.0.1:5000/register', {username, email, password});
+          const response = await axios.post('https://backend-server-hswc.onrender.com/register', {username, email, password});
           if (response.status === 201) {
               setSignupText("Sign up Successful")
               setIsPopupOpen(true)

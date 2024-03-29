@@ -11,7 +11,7 @@ const PrivateRoutes = () => {
       try {
         const token = localStorage.getItem('token');
         if (token) {
-          const response = await axios.get('http://127.0.0.1:5000/verify', { params: { token } });
+          const response = await axios.get('https://backend-server-hswc.onrender.com/verify', { params: { token } });
           if (response.status === 200) {
             setIsAuthenticated(true);
           } else {

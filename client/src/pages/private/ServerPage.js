@@ -90,7 +90,7 @@ function ServerPage() {
                 setServerList([...serverList, data]);
                 setSelectedImage(null)
                 let jwt = localStorage.getItem('token');
-                axios.post('http://127.0.0.1:5000/addServer', { name, base64String, jwt })
+                axios.post('https://backend-server-hswc.onrender.com/addServer', { name, base64String, jwt })
                     .then(() => {
                         // Add the new server data to the serverList state
                         // setServerList([...serverList, data]);
@@ -127,7 +127,7 @@ function ServerPage() {
             setRoomName(`${serverName}-${data}`);
         }
         // setMessages([])
-        axios.get('http://127.0.0.1:5000/getMessage', {
+        axios.get('https://backend-server-hswc.onrender.com/getMessage', {
             params: {
                 serverName: serverName,
                 channelName: data
@@ -188,11 +188,11 @@ function ServerPage() {
             });
             return newList;
         });
-        axios.post('http://127.0.0.1:5000/joinServer', { username , serverName})
+        axios.post('https://backend-server-hswc.onrender.com/joinServer', { username , serverName})
             .then(() => {
                 console.log("Join Server")
 
-                axios.get(`http://127.0.0.1:5000/getServerList?token=${token}`)
+                axios.get(`https://backend-server-hswc.onrender.com/getServerList?token=${token}`)
                     .then(response => {
                         setServerList(response.data);
                         console.log(response.data)

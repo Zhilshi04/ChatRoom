@@ -10,7 +10,7 @@ function App(){
     useEffect(() => {
         const token = localStorage.getItem('token');
         if (token) {
-            axios.get(`http://127.0.0.1:5000/verify?token=${token}`)
+            axios.get(`https://backend-server-hswc.onrender.com/verify?token=${token}`)
                 .then(response => {
                     // Handle successful response
                     console.log('message', response.data);

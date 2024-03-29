@@ -13,7 +13,7 @@ export default function Channel({propFromParent , childToParent}) {
             // Function to fetch channel list
             const fetchChannelList = async () => {
                 try {
-                    const response = await axios.get('http://127.0.0.1:5000/getChannel', {
+                    const response = await axios.get('https://backend-server-hswc.onrender.com/getChannel', {
                         params: {
                             name: propFromParent // Pass server name as a query parameter
                         }
@@ -50,7 +50,7 @@ export default function Channel({propFromParent , childToParent}) {
         let data = {Name:channelName,channelMessage:[]};
         setChannelList([...channelList, data]);
         try {
-            const response = await axios.post('http://127.0.0.1:5000/addChannel', { channelName, serverName: propFromParent });
+            const response = await axios.post('https://backend-server-hswc.onrender.com/addChannel', { channelName, serverName: propFromParent });
         } catch(error) {
             console.log(error);
         }
