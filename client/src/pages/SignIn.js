@@ -39,7 +39,7 @@ function LoginPage() {
     console.log('Logging in with:', { username, password, rememberMe });
     // password = password.toString()
     try {
-      const response = await axios.post('http://127.0.0.1:5000/login', {username , password});
+      const response = await axios.post('https://backend-server-hswc.onrender.com/login', {username , password});
       let token = response.data['token']
       // console.log(response.data['token'])
       console.log(response.statusText)
